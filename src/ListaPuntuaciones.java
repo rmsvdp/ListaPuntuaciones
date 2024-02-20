@@ -16,6 +16,42 @@ public class ListaPuntuaciones {
 	 * En ese momento, se desplazan hacia abajo el resto de puntuaciones
 	 */
 
+	// Comparator Branchh
+	
+	/*
+	 * Interfaz Comparator
+	 * Esta interfaz tiene un único método abstracto
+	 * 
+	 * int compare(Object ob1, Object ob2)
+	 * 
+	 * Cuando necesitamos otros criterios distintos de la ordenación natural (orden alfabético, alguna
+	 * otra condición), debemos usar mejor este interfaz.
+	 * 
+	 * devuelve <0 si ob1 va antes de ob2
+	 * devuelve >0 si ob1 va después de ob2
+	 * devuelve 0 si son iguales
+	 * Podemos disponer de varios criterios de comparación, para ello se debe crear una 
+	 * clase específica para que implemente el criterio
+	 * 
+	 * Disponemos de una variante del método sort que acepta el criterio de comparación
+	 * 
+	 */
+	
+	// Clase específica para compararPuntos
+	
+	 private class comparaPuntos implements Comparator<Marcador>{
+		 @Override
+		 public int compare(Marcador s1, Marcador s2)
+	   {
+			 // si s2>s1   será negativo --> s2 va antes !
+			 // Ojo con la comparación !!!
+	      return (int) (s2.getPuntos() - s1.getPuntos()); 
+	   }
+	 }
+	 
+	 
+	
+	
 	private class Marcador {
 		
 		private long puntos;
@@ -107,6 +143,37 @@ public class ListaPuntuaciones {
 	}
 	
 
+	public int insertScoreComparator(long puntos, String nick, String curso,   LocalDateTime fecha) {
+		int result = -1;
+		this.lineapunt = new Marcador(puntos,nick,curso,fecha);
+		Marcador[] tempM ;
+		tempM = Arrays.copyOf(this.myScoreBoard, 11);
+		tempM[10]= this.lineapunt;
+		Arrays.sort(tempM,new comparaPuntos());
+		this.myScoreBoard = Arrays.copyOf(tempM, 10);
+		result = indexOf(this.myScoreBoard, this.lineapunt);
+
+		return result;
+	}
+	/**
+	 * Devuelve la posición de un objeto Marcador dentro del array
+	 * @param myArr Array ordenado
+	 * @param item  Elemento a buscar
+	 * @return   -1 no está, 0..myArr.length-1
+	 */
+	public int indexOf(Marcador[] myArr, Marcador item) {
+		int result = -1;
+				for (int i=0;i<myArr.length;i++) {
+					
+					if (item.equals(myArr[i])) { // Ojo como comparas!!
+						result = i;
+						break;
+					}
+				}
+		return result;
+	}
+	
+	
 	
 	public String[] getScoreBoard() {
 		String[] s = new String[10];
