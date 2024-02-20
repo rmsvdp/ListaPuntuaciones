@@ -1,6 +1,16 @@
 import java.time.LocalDateTime;
 import java.util.Scanner;
  
+
+
+/*
+ * TODO		Generar Pruebas unitarias
+ * TODO		Depuración general de métodos
+ * TODO		Mejora: Añadir opción de ordenación teniendo en cuenta fecha de inserción
+ * TODO		Documentar código
+ * TODO		Generar JavaDoc 
+ * TODO		Empaquetar como librería
+ */
 public class Principal {
 
 	public static void main(String[] args) {
@@ -16,6 +26,9 @@ public class Principal {
 			ListaPuntuaciones  TopTen = new ListaPuntuaciones("RoadRunner");
 
 			// Se puede elegir cualquiera de las 3 opcciones
+			// 1 - Ordenación propia
+			// 2 - Ordenación mediante interfaz Comparator
+			// 3 - Ordenación mediante interfaz Comparable
 			int modo = 1;
 			boolean stop = true;
 
@@ -45,6 +58,12 @@ public class Principal {
 			
 		} // run()
 
+	 /**
+	  * Muestra por consola la lista de puntuaciones
+	  * @param _TopTen Array de objetos marcador (10 elemento)
+	  * @param espera indica si el programa detiene su ejecución hasta 
+	  * pulsar ENTER
+	  */
 	 public void lista(ListaPuntuaciones _TopTen, boolean espera) {
 		 
 		 String[] TablaPuntuaciones = new String[10];
