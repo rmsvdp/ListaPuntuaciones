@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ListaPuntuaciones {
+public class ListaPuntuaciones{
 
 	// Main Branch  Ordenación propia
 	
@@ -37,17 +37,7 @@ public class ListaPuntuaciones {
 	 * 
 	 */
 	
-	// Comparable Branch
-	
-	/*
-	 * Interfaz comparable
-	 * Dispone de un único método 
-	 * int compareTo(Object ob)
-	 * devuelve	>0, si el objeto actual es mayor que el objeto especificado.
-	 * devuelve <0, si el objeto actual es igual al objeto especificado.
-	 * devuelve 0 si son iguales
-	 */
-	
+
 	// Clase específica para compararPuntos
 	
 	 private class comparaPuntos implements Comparator<Marcador>{
@@ -60,10 +50,21 @@ public class ListaPuntuaciones {
 	   }
 	 }
 	 
-	 
+		// Comparable Branch
+		
+		/*
+		 * Interfaz comparable
+		 * Dispone de un único método 
+		 * int compareTo(Object ob)
+		 * devuelve	>0, si el objeto actual es mayor que el objeto especificado.
+		 * devuelve <0, si el objeto actual es igual al objeto especificado.
+		 * devuelve 0 si son iguales
+		 */
+		
+
 	
 	
-	private class Marcador {
+	private class Marcador  implements Comparable<Marcador> {
 		
 		private long puntos;
 		private String nick;
@@ -80,6 +81,17 @@ public class ListaPuntuaciones {
 			this.puntos = puntos;this.nick = nick;this.curso = curso;this.fecha = fecha;}
 		public long getPuntos() {return puntos;	}
 	
+		 public int compareTo(Marcador st) {
+			 
+			 if(puntos==st.puntos)  
+				 return 0;  
+				 else if(puntos>st.puntos)  
+				 return 1;  
+				 else  
+				 return -1;
+			 
+		 }
+		
 	} // Inner Class Marcador
 	
 
