@@ -14,7 +14,7 @@ public class Principal {
 
 			ListaPuntuaciones  TopTen = new ListaPuntuaciones("RoadRunner");
 			
-			int modo = 1;
+			int modo = 3; 
 			
 			TopTen.insertScore(modo,100, "AFX", "1WET", LocalDateTime.now());
 			TopTen.insertScore(modo,600, "AFX", "1WET", LocalDateTime.now());

@@ -86,9 +86,9 @@ public class ListaPuntuaciones{
 			 if(puntos==st.puntos)  
 				 return 0;  
 				 else if(puntos>st.puntos)  
-				 return 1;  
+				 return -1;  
 				 else  
-				 return -1;
+				 return 1;
 			 
 		 }
 		
@@ -135,6 +135,9 @@ public class ListaPuntuaciones{
 				case 2: // Comparator
 					insertScoreComparator(_puntos, _nick, _curso, _fecha);
 					break;
+				case 3: // Comparable
+					insertScoreComparable(_puntos, _nick, _curso, _fecha);
+					break;
 			}
 			
 
@@ -166,6 +169,18 @@ public class ListaPuntuaciones{
 		return result;
 	}
 	
+	public int insertScoreComparable(long puntos, String nick, String curso,   LocalDateTime fecha) {
+		int result = -1;
+		this.lineapunt = new Marcador(puntos,nick,curso,fecha);
+		Marcador[] tempM ;
+		tempM = Arrays.copyOf(this.myScoreBoard, 11);
+		tempM[10]= this.lineapunt;
+		Arrays.sort(tempM);
+		this.myScoreBoard = Arrays.copyOf(tempM, 10);
+		result = indexOf(this.myScoreBoard, this.lineapunt);
+
+		return result;
+	}
 
 	public int insertScoreComparator(long puntos, String nick, String curso,   LocalDateTime fecha) {
 		int result = -1;
