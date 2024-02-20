@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class ListaPuntuaciones {
 
-	// Main Branch 
+	// Main Branch  Ordenación propia
 	
 	/* Versión con algoritmo de ordenación propio
 	 * ------------------------------------------------------------
