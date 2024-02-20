@@ -37,6 +37,17 @@ public class ListaPuntuaciones {
 	 * 
 	 */
 	
+	// Comparable Branch
+	
+	/*
+	 * Interfaz comparable
+	 * Dispone de un único método 
+	 * int compareTo(Object ob)
+	 * devuelve	>0, si el objeto actual es mayor que el objeto especificado.
+	 * devuelve <0, si el objeto actual es igual al objeto especificado.
+	 * devuelve 0 si son iguales
+	 */
+	
 	// Clase específica para compararPuntos
 	
 	 private class comparaPuntos implements Comparator<Marcador>{
