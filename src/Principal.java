@@ -14,19 +14,19 @@ public class Principal {
 
 			ListaPuntuaciones  TopTen = new ListaPuntuaciones("RoadRunner");
 			
-	
+			int modo = 1;
 			
-			TopTen.insertScore(100, "AFX", "1WET", LocalDateTime.now());
-			TopTen.insertScore(600, "AFX", "1WET", LocalDateTime.now());
-			TopTen.insertScore(950, "UVI", "1WET", LocalDateTime.now());
-			TopTen.insertScore(800, "JFC", "1WET", LocalDateTime.now());
-			TopTen.insertScore(999, "RMS", "1WET", LocalDateTime.now());
-			TopTen.insertScore(601, "AFX", "1WET",LocalDateTime.now());
-			TopTen.insertScore(400, "MIA", "1WET",LocalDateTime.now());
-			TopTen.insertScore(823, "VDP", "1WET",LocalDateTime.now());
-			TopTen.insertScore(998, "R02", "1WET",LocalDateTime.now());
-			TopTen.insertScore(997, "R03", "1WET",LocalDateTime.now());
-			TopTen.insertScore(996, "HAL", "1WET",LocalDateTime.now());
+			TopTen.insertScore(modo,100, "AFX", "1WET", LocalDateTime.now());
+			TopTen.insertScore(modo,600, "AFX", "1WET", LocalDateTime.now());
+			TopTen.insertScore(modo,950, "UVI", "1WET", LocalDateTime.now());
+			TopTen.insertScore(modo,800, "JFC", "1WET", LocalDateTime.now());
+			TopTen.insertScore(modo,999, "RMS", "1WET", LocalDateTime.now());
+			TopTen.insertScore(modo,601, "AFX", "1WET",LocalDateTime.now());
+			TopTen.insertScore(modo,400, "MIA", "1WET",LocalDateTime.now());
+			TopTen.insertScore(modo,823, "VDP", "1WET",LocalDateTime.now());
+			TopTen.insertScore(modo,998, "R02", "1WET",LocalDateTime.now());
+			TopTen.insertScore(modo,997, "R03", "1WET",LocalDateTime.now());
+			TopTen.insertScore(modo,996, "HAL", "1WET",LocalDateTime.now());
 			
 			lista(TopTen);
 			
