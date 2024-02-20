@@ -16,6 +16,27 @@ public class ListaPuntuaciones {
 	 * En ese momento, se desplazan hacia abajo el resto de puntuaciones
 	 */
 
+	// Comparator Branchh
+	
+	/*
+	 * Interfaz Comparator
+	 * Esta interfaz tiene un único método abstracto
+	 * 
+	 * int compare(Object ob1, Object ob2)
+	 * 
+	 * Cuando necesitamos otros criterios distintos de la ordenación natural (orden alfabético, alguna
+	 * otra condición), debemos usar mejor este interfaz.
+	 * 
+	 * devuelve <0 si ob1 va antes de ob2
+	 * devuelve >0 si ob1 va después de ob2
+	 * devuelve 0 si son iguales
+	 * Podemos disponer de varios criterios de comparación, para ello se debe crear una 
+	 * clase específica para que implemente el criterio
+	 * 
+	 * Disponemos de una variante del método sort que acepta el criterio de comparación
+	 * 
+	 */
+	
 	private class Marcador {
 		
 		private long puntos;
