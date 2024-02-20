@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ListaPuntuaciones {
+public class ListaPuntuaciones{
 
 	// Main Branch  Ordenación propia
 	
@@ -37,6 +37,7 @@ public class ListaPuntuaciones {
 	 * 
 	 */
 	
+
 	// Clase específica para compararPuntos
 	
 	 private class comparaPuntos implements Comparator<Marcador>{
@@ -49,10 +50,21 @@ public class ListaPuntuaciones {
 	   }
 	 }
 	 
-	 
+		// Comparable Branch
+		
+		/*
+		 * Interfaz comparable
+		 * Dispone de un único método 
+		 * int compareTo(Object ob)
+		 * devuelve	>0, si el objeto actual es mayor que el objeto especificado.
+		 * devuelve <0, si el objeto actual es igual al objeto especificado.
+		 * devuelve 0 si son iguales
+		 */
+		
+
 	
 	
-	private class Marcador {
+	private class Marcador  implements Comparable<Marcador> {
 		
 		private long puntos;
 		private String nick;
@@ -69,6 +81,17 @@ public class ListaPuntuaciones {
 			this.puntos = puntos;this.nick = nick;this.curso = curso;this.fecha = fecha;}
 		public long getPuntos() {return puntos;	}
 	
+		 public int compareTo(Marcador st) {
+			 
+			 if(puntos==st.puntos)  
+				 return 0;  
+				 else if(puntos>st.puntos)  
+				 return -1;  
+				 else  
+				 return 1;
+			 
+		 }
+		
 	} // Inner Class Marcador
 	
 
@@ -112,6 +135,9 @@ public class ListaPuntuaciones {
 				case 2: // Comparator
 					insertScoreComparator(_puntos, _nick, _curso, _fecha);
 					break;
+				case 3: // Comparable
+					insertScoreComparable(_puntos, _nick, _curso, _fecha);
+					break;
 			}
 			
 
@@ -143,6 +169,18 @@ public class ListaPuntuaciones {
 		return result;
 	}
 	
+	public int insertScoreComparable(long puntos, String nick, String curso,   LocalDateTime fecha) {
+		int result = -1;
+		this.lineapunt = new Marcador(puntos,nick,curso,fecha);
+		Marcador[] tempM ;
+		tempM = Arrays.copyOf(this.myScoreBoard, 11);
+		tempM[10]= this.lineapunt;
+		Arrays.sort(tempM);
+		this.myScoreBoard = Arrays.copyOf(tempM, 10);
+		result = indexOf(this.myScoreBoard, this.lineapunt);
+
+		return result;
+	}
 
 	public int insertScoreComparator(long puntos, String nick, String curso,   LocalDateTime fecha) {
 		int result = -1;
