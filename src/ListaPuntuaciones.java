@@ -65,11 +65,18 @@ public class ListaPuntuaciones {
 		}
 	}
 
-	public int insertScore(long _puntos, String _nick, String _curso,   LocalDateTime _fecha) {
+	public int insertScore(int _modo, long _puntos, String _nick, String _curso,   LocalDateTime _fecha) {
 		
 		int result = -1;
+			switch (_modo) {
 			
-			insertScorePropio(_puntos, _nick, _curso, _fecha);
+				case 1: // Propio
+					insertScorePropio(_puntos, _nick, _curso, _fecha);
+					break;
+				case 2: // Comparator
+					break;
+			}
+			
 
 			return result;
 	}
