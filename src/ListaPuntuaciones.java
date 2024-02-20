@@ -110,6 +110,7 @@ public class ListaPuntuaciones {
 					insertScorePropio(_puntos, _nick, _curso, _fecha);
 					break;
 				case 2: // Comparator
+					insertScoreComparator(_puntos, _nick, _curso, _fecha);
 					break;
 			}
 			
