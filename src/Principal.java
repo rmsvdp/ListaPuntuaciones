@@ -14,15 +14,11 @@ public class Principal {
 		 
 
 			ListaPuntuaciones  TopTen = new ListaPuntuaciones("RoadRunner");
-			
-<<<<<<< HEAD
+
 			// Se puede elegir cualquiera de las 3 opcciones
 			int modo = 1;
 			boolean stop = true;
-=======
-			int modo = 3; 
-			
->>>>>>> refs/heads/Comparable
+
 			TopTen.insertScore(modo,100, "AFX", "1WET", LocalDateTime.now());
 			lista(TopTen,true);
 			TopTen.insertScore(modo,600, "AFX", "1WET", LocalDateTime.now());
