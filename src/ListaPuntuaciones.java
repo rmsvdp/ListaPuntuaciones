@@ -130,13 +130,13 @@ public class ListaPuntuaciones{
 			switch (_modo) {
 			
 				case 1: // Propio
-					insertScorePropio(_puntos, _nick, _curso, _fecha);
+					result = insertScorePropio(_puntos, _nick, _curso, _fecha);
 					break;
 				case 2: // Comparator
-					insertScoreComparator(_puntos, _nick, _curso, _fecha);
+					result = insertScoreComparator(_puntos, _nick, _curso, _fecha);
 					break;
 				case 3: // Comparable
-					insertScoreComparable(_puntos, _nick, _curso, _fecha);
+					result = insertScoreComparable(_puntos, _nick, _curso, _fecha);
 					break;
 			}
 			
